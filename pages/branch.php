@@ -156,23 +156,31 @@ margin-top: 0;
 
 <div id="leftcolumn">
 <div class="innertube">
-                <ul style="list-style:none">
-					<li><a href="index.html" class="home"><span></span>Home</a></li>
-					<li><a href="aboutus.html" class="about"><span></span>About us</a></li>
-					<li><a href="tours.html" class="portfolio"><span></span>Tours</a></li>
-					<li><a href="service.html" class="services"><span></span>Services</a></li>
-                    <li><a href="branch.html" class="services"><span></span>Branches</a></li>
-					<li><a href="contactus.html" class="contact"><span></span>Contact us</a></li>
-				</ul>
+  <ul style="list-style:none">
+  	<li><a href="../index.php" class="home"><span></span>Home</a></li>
+    <li><a href="aboutus.php" class="about"><span></span>About us</a></li>
+    <li><a href="tours.php" class="portfolio"><span></span>Tours</a></li>
+    <li><a href="service.php" class="services"><span></span>Services</a></li>
+    <li><a href="branch.php" class="services"><span></span>Branches</a></li>
+    <li><a href="contactus.php" class="contact"><span></span>Contact us</a></li>
+    <li><a href="register.php">Register</a></li>
+    <?php if (isset($_SESSION['logged_in'])) { ?>
+        <li><a href="logout.php">Logout</a></li>
+        <?php if (isset($_SESSION['is_admin'])) { ?>
+            <li><a href="admin.php">Admin</a></li>
+        <?php  }?>
+    <?php } else { ?>
+        <li><a href="login.php">Login</a></li>
+    <?php } ?>				
+	</ul>
                
                
                 
                 </div>
 </div>
 
-<footer id="footer"><a href="http://www.dreamtravelagent.com/" target="blank">Copyright &copy; dreamtravel.com 2016 </a>
+<footer id="footer"><a href="http://www.dreamtravelagent.com/" target="blank">Copyright &copy; dreamtravel.com </a>
 <p id="demo"></p></footer>
-
 </div>
 
 
